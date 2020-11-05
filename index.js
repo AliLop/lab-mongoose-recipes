@@ -24,6 +24,7 @@ mongoose
     // Run your code here, after you have insured that the connection was made
   })
   .catch(error => {
+    
     console.error('Error connecting to the database', error);
   });
 
@@ -37,7 +38,6 @@ mongoose
       console.log(`Error occurred ${err}`)
   })
 
-
 //MANUALLY IMPORTED ON MONGOOSE SINCE TERMINAL DOES NTO WORK FOR ME
 //mongoimport --db restaurants --collection restaurants --drop --file primer-dataset.json
 
@@ -50,7 +50,6 @@ const promise1 = Recipe.find({}, 'title')
     //mongoose.connection.close();
   })
   
-
 const promise2 =  Recipe.findOneAndUpdate({ title: 'Rigatoni alla Genovese'}, {duration: 100})
   .then((updatedDuration) => {
         console.log (`Updated duration on ${updatedDuration}!`)
